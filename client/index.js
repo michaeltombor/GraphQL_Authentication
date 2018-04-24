@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ApolloClient from 'apollo-client';
 import { ApolloProvider } from 'react-apollo';
+import { Router, hashHistory, Route, IndexRoute } from 'react-router';
 
 const client = new ApolloClient({
   dataIdFromObject: object => object.id
@@ -9,9 +10,12 @@ const client = new ApolloClient({
 
 const Root = () => {
   return (
-    <div>
-      Auth Starter
-    </div>
+    <ApolloProvider client = {client}>
+      <Router> history={hashHistory}>
+        <Route path="/" component={App}>
+        </Route>
+      </Router>
+    </ApolloProvider>
   );
 };
 
