@@ -1,16 +1,24 @@
 import React, { Component } from 'react';
 import AuthForm from './AuthForm';
-
+import mutation from '../mutations/Login';
+import { graphql } from 'react-apollo';
 
 class LoginForm extends Component{
+    //define callback and pass it down into the Authform and will be 
+    //called when AuthForm is submitted
+    onSubmit({ email, password }){
+        this.props.mutate({
+            variables: { email, password }
+        });
+    }
     render(){
         return(
             <div>
                 <h3>Log In</h3>
-                <AuthForm />
+                <AuthForm onSubmit={this.onSubmit.bind(this)}/>
             </div>
             );
     }
 }
 
-export default LoginForm;
+export default graphql(mutation)(LoginForm);
