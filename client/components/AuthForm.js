@@ -33,7 +33,10 @@ return(
           onChange={ e => this.setState({ password: e.target.value })}
         />
       </div>
+        <div className="errors">
+        {this.props.errors.map(error => <div key={error}>{error}</div> )}
         <button className="btn">Submit</button>
+        </div>
     </form>
   </div>
 );
