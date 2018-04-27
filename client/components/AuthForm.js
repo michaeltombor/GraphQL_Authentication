@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 class AuthForm extends Component{
-    contructor(props) {
+    constructor(props) {
         super(props);
         
         this.state = { email: '', password: '' };
