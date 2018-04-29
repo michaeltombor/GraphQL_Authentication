@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
+import AuthForm from './AuthForm';
 
 class SignupForm extends Component {
-    render(){
-        return(
-            <div>Sign Up</div>
-            )
-    }
+  render(){
+    return(
+      <div>
+        <AuthForm />
+      </div>
+    )
+  }
     
 }
 
